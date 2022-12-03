@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const todoRoute = require("./routes/todos");
 const currRoute = require("./routes/curriculum.route")
 const userRoute = require("./routes/users.route")
+const eventosRoute = require("./routes/ROUTES_GESTION/eventos.route");
+const reversRoute = require("./routes/ROUTES_GESTION/reservaciones")
 require("dotenv").config();
 
 
@@ -16,6 +18,8 @@ app.use(express.json());
 app.use("/todos", todoRoute);
 app.use("/curriculum", currRoute);
 app.use("/users", userRoute);
+app.use("/events", eventosRoute);
+app.use("/reservs", reversRoute);
 
 
 const mongoUri = process.env['MONGODB_URI'];
