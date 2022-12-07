@@ -6,6 +6,10 @@ const currRoute = require("./routes/curriculum.route")
 const userRoute = require("./routes/users.route")
 const eventosRoute = require("./routes/ROUTES_GESTION/eventos.route");
 const reversRoute = require("./routes/ROUTES_GESTION/reservaciones")
+const usuariosRoute = require("./routes/ROUTES_DWI/users.route")
+const categRoute = require("./routes/ROUTES_DWI/categorias.route")
+const ingresRoute = require("./routes/ROUTES_DWI/ingresos.route")
+const gastosRoute = require("./routes/ROUTES_DWI/gastos.route")
 require("dotenv").config();
 
 
@@ -20,7 +24,10 @@ app.use("/curriculum", currRoute);
 app.use("/users", userRoute);
 app.use("/events", eventosRoute);
 app.use("/reservs", reversRoute);
-
+app.use("/usuarios", usuariosRoute);
+app.use("/categorias", categRoute);
+app.use("/ingresos", ingresRoute);
+app.use("/gastos", gastosRoute);
 
 const mongoUri = process.env['MONGODB_URI'];
 
